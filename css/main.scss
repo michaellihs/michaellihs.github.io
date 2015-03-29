@@ -21,12 +21,13 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-	"variables",
-	"base",
-	"layout",
-	"header",
-	"content",
-	"posts",
-	"footer",
-	"syntax-highlighting"
+	"base/variables",
+	"base/base",
+	"layout/layout",
+	"layout/header",
+	"layout/content",
+	"modules/posts",
+	"layout/footer",
+	"modules/syntax-highlighting",
+    "modules/social"
 ;

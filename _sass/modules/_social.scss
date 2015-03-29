@@ -1,0 +1,69 @@
+.soc {
+	display: block;
+	font-size: 0;
+	list-style: none;
+	margin: 0;
+	padding: 32px;
+	padding: 3.2rem;
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 12px;
+		margin: 1.2rem;
+	}
+	a, svg {
+		display: block;
+	}
+	a {
+		position: relative;
+	}
+	svg {
+		height: 64px;
+		width: 64px;
+
+		path {
+			fill: $brand-color;
+		}
+	}
+	// IE8:
+	em {
+		font-size: 14px;
+		line-height: 1.5;
+		margin-top: -0.75em;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+// Using placeholder selectors and @extend (keeps output CSS lean) instead of [class*='icon-'] attribute selector because IE8 doesn't support it :<
+
+%social-icon-hover {
+	border-radius: 100%;
+	color: $brand-color;
+	fill: $brand-color;
+	transform: scale(1.25);
+	transition: background-color 0.5s, transform 0.5s ease-out;
+}
+
+// Neat color trick, <3 Sass
+.icon-social {
+	color: $brand-color;
+	svg {
+		path {
+			fill: $brand-color;
+		}
+	}
+	&:hover {
+		background: $brand-color;
+		svg {
+			path {
+				fill: $white;
+			}
+		}
+		@extend %social-icon-hover;
+	}
+}

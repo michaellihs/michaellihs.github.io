@@ -4,7 +4,6 @@
 	list-style: none;
 	margin: 0;
 	padding: 32px;
-	padding: 3.2rem;
 	text-align: center;
 	li {
 		display: inline-block;
@@ -66,4 +65,22 @@
 		}
 		@extend %social-icon-hover;
 	}
+}
+
+.icon-rss {
+	display: inline-block;
+	transition: transform 0.5s ease-out;
+
+	svg {
+		width: 32px;
+		height: 32px;
+		path {
+			fill: $white;
+		}
+	}
+
+	&:hover {
+		transform: scale(1.25);
+	}
+
 }

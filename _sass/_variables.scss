@@ -1,0 +1,30 @@
+// Our variables
+$base-font-family: 		Helvetica, Arial, sans-serif;
+$base-font-size:   		16px;
+$small-font-size:  		$base-font-size * 0.875;
+$base-line-height: 		1.5;
+
+$spacing-unit:     		30px;
+
+$border-height:    		3px;
+
+$text-color:       		#333;
+$background-color: 		#fdfdfd;
+$brand-color:      		#4a93cd;
+$brand-color-dark: 		darken($brand-color, 10%);
+$white:            		#fff;
+
+$grey-color:       		#828282;
+$grey-color-light: 		lighten($grey-color, 40%);
+$grey-color-lighter: 	#ccc;
+$grey-color-dark:  		darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    		800px;
+
+$on-palm:          		600px;
+$on-laptop:        		800px;
+
+// Footer height
+$footer-height: 		180px;
+$footer-height-mobile: 	3 * $footer-height;

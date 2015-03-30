@@ -12,7 +12,13 @@
 	a {
 		color: $grey-color-light;
 	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $grey-color-light;
+	}
 }
+
+
 
 .footer-heading {
 	font-size: 18px;
@@ -38,8 +44,8 @@
 }
 
 .footer-col-1 {
-	width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-	width: calc(35% - (#{$spacing-unit} / 2));
+	width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+	width: calc(45% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
@@ -48,8 +54,8 @@
 }
 
 .footer-col-3 {
-	width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-	width: calc(45% - (#{$spacing-unit} / 2));
+	width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+	width: calc(35% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {

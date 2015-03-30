@@ -8,16 +8,19 @@ $spacing-unit:     		30px;
 
 $border-height:    		3px;
 
-$text-color:       		#333;
-$background-color: 		#fdfdfd;
-$brand-color:      		#4a93cd;
-$brand-color-dark: 		darken($brand-color, 10%);
-$white:            		#fff;
-
 $grey-color:       		#828282;
 $grey-color-light: 		lighten($grey-color, 40%);
 $grey-color-lighter: 	#ccc;
 $grey-color-dark:  		darken($grey-color, 25%);
+
+$text-color:       		#333;
+$background-color: 		$grey-color-light;
+$code-background:       #f8f8f8;
+$brand-color:      		#4a93cd;
+$brand-color-dark: 		darken($brand-color, 10%);
+$white:            		#fff;
+
+
 
 // Width of the content area
 $content-width:    		800px;

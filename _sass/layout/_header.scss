@@ -1,7 +1,7 @@
 .site-header {
 	background-color: $brand-color;
 	border-top: 5px solid $brand-color-dark;
-	border-bottom: 3px solid $grey-color-light;
+	border-bottom: 3px solid lighten($brand-color, 10%);
 	min-height: 56px;
 
 	// Positioning context for the mobile navigation icon
@@ -13,8 +13,12 @@
 	line-height: 56px;
 	letter-spacing: -1px;
 	margin-bottom: 0;
+	padding-left: 7px;
+	padding-right: 7px;
 	float: left;
 	color: $white;
+	display: inline-block;
+	transition: transform 0.2s ease-out;
 
 	&,
 	&:visited {
@@ -22,7 +26,7 @@
 	}
 
 	&:hover {
-		color: darken($white, 20%);
+		background-color: $brand-color-dark;
 	}
 }
 
@@ -36,7 +40,11 @@
 
 	.page-link {
 		color: $white;
-		line-height: $base-line-height;
+		line-height: 56px;
+		padding-left: 5px;
+		padding-right: 5px;
+		display: inline-block;
+		transition: transform 0.2s ease-out;
 
 		// Gaps between nav items, but not on the first one
 		&:not(:first-child) {
@@ -44,7 +52,7 @@
 		}
 
 		&:hover {
-			color: darken($white, 20%);
+			background-color: $brand-color-dark;
 		}
 	}
 
@@ -52,12 +60,13 @@
 		position: absolute;
 		top: 9px;
 		right: 30px;
-		background-color: $background-color;
-		border: 1px solid $grey-color-light;
+		background-color: $brand-color-dark;
+		border: 1px solid $brand-color-dark;
 		border-radius: 5px;
 		text-align: right;
 
 		.menu-icon {
+			background-color: $brand-color-dark;
 			display: block;
 			float: right;
 			width: 36px;
@@ -71,7 +80,7 @@
 				height: 15px;
 
 				path {
-					fill: $grey-color-dark;
+					fill: $white;
 				}
 			}
 		}

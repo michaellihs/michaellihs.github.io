@@ -3,7 +3,7 @@
 	font-size: 0;
 	list-style: none;
 	margin: 0;
-	padding: 32px;
+	padding-bottom: $spacing-unit;
 	text-align: center;
 	li {
 		display: inline-block;
@@ -68,12 +68,13 @@
 }
 
 .icon-rss {
+	float: left;
 	display: inline-block;
-	transition: transform 0.5s ease-out;
+	transition: transform 0.2s ease-out;
 
 	svg {
-		width: 32px;
-		height: 32px;
+		width: 48px;
+		height: 48px;
 		path {
 			fill: $white;
 		}

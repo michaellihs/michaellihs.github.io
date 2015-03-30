@@ -1,10 +1,13 @@
 .post-header {
 	margin-bottom: $spacing-unit;
+
+	h1 {
+		padding-top: 30px;
+	}
 }
 
 .post-title {
 	font-size: 42px;
-	letter-spacing: -1px;
 	line-height: 1;
 
 	@include media-query($on-laptop) {
@@ -14,6 +17,10 @@
 
 .post-content {
 	margin-bottom: $spacing-unit;
+
+	h2, h3, h4, h5 {
+		margin-top: $spacing-unit;
+	}
 
 	h2 {
 		font-size: 32px;
@@ -39,3 +46,11 @@
 		}
 	}
 }
+
+
+.post {
+	article {
+		@extend .white-shadow-box;
+	}
+}
+

@@ -16,18 +16,3 @@ Currently I'm working for a company called [punkt.de](http://www.punkt.de) in Ka
 In my blog posts I want to share some of my experience with those tools and provide some best practices.
 
 If you have any questions, feel free to contact me any time.
-
-
-
-
-
-
-
-
-
-
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)

@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "Some helpful resources for setting up blog with Jekyll"
+title:  "Some helpful resources for setting up my blog with Jekyll"
 summary: "A collection of resources that helped me setting up my blog with Jekyll"
 date:   2015-03-29 13:30:00
 categories: jekyll
+tags: [jekyll, css]
 ---
 
-Within this blog post, I'd like to mention some resources that helped me along setting up this blog.
+In this blog post, I'd like to mention some resources that helped me along setting up this blog.
 
 ### Base Template
 
@@ -42,7 +43,40 @@ For the rendering of the social media buttons I wanted to have simple but fancy 
 
 Here is a nice article on [how to generate the social URLs][socialurl] with jekyll.
 
+### Facebook share button without Javascript
 
+Since the privacy of my readers is important to me, I did not want to include any Javascript from Facbook and other social media platforms. It was a little tricky to make this work with a title and a summary in the Facebook share, so here is my code of `_layouts/post.html`:
+
+{% highlight html %}
+<ul class="soc">
+<li>
+  <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}/{{ page.url }}&via=kaktusmimi"
+	 target="_blank" class="icon-social" title="Share this post on Twitter">
+	<span class="icon  icon--twitter">
+	  <svg viewBox="0 0 512 512">
+		<path d="... SVG code for twitter ..."></path>
+	  </svg>
+	</span>
+  </a>
+</li>
+<li>
+  <a href="http://www.facebook.com/sharer.php?s=100&p[url]={{ site.url }}/{{ page.url }}&p[title]={{ page.title }}"
+	 target="_blank" class="icon-social" title="Share this post on Facebook">
+	<span class="icon  icon--twitter">
+	  <svg viewBox="0 0 512 512">
+		<path d="... SVG code ..."></path>
+	  </svg>
+	</span>
+  </a>
+</li>
+</ul>
+{%endhighlight %}
+
+Make sure to have the `site.url` set in your  `_config.yml`:
+
+{% highlight yaml %}
+url: "http://michaelknoll.github.io"
+{%endhighlight %}
 
 
 [my repository]:      http://github.com/michaelknoll/michaelknoll.github.io

@@ -79,12 +79,44 @@ url: "http://michaelknoll.github.io"
 {%endhighlight %}
 
 
-[my repository]:      http://github.com/michaelknoll/michaelknoll.github.io
-[seb]:                http://mind-the-seb.de/blog.html
-[smacss]:             https://smacss.com/
-[stickyfooter]:	      http://www.cssstickyfooter.com/using-sticky-footer-code.html
-[socicon]:            http://www.socicon.com/
-[illustratorsvg]:     https://css-tricks.com/using-svg/
-[codepen]:            http://codepen.io/ruandre/pen/howFi
-[sassscss]:           http://www.sasstoscss.com/
-[socialurl]:          http://zhangwenli.com/blog/2014/08/03/make-your-own-social-sharing-bar-with-jekyll/
+### Enabling Disqus Comments in Github Pages
+
+This is pretty simple. First register a new site in the [Disqus Admin Center]. Use "Add new website" to register your new site. You'll get a code snippet then, e.g.
+
+{% highlight html %}
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'michaellihs';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{%endhighlight %}
+
+This snippet can be put into a file `_includes/disqus.html` within your Jekyll sources. You can now include it in your `_layouts/post.html` template.
+
+## Further Resources
+
+Here is a collection of further resources for using Jekyll
+
+* [Smashing Magazine - Build A Blog With Jekyll And GitHub Pages](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/)
+* [Using Github issues for comments](http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html)
+
+
+
+[my repository]:       http://github.com/michaelknoll/michaelknoll.github.io
+[seb]:                 http://mind-the-seb.de/blog.html
+[smacss]:              https://smacss.com/
+[stickyfooter]:	       http://www.cssstickyfooter.com/using-sticky-footer-code.html
+[socicon]:             http://www.socicon.com/
+[illustratorsvg]:      https://css-tricks.com/using-svg/
+[codepen]:             http://codepen.io/ruandre/pen/howFi
+[sassscss]:            http://www.sasstoscss.com/
+[socialurl]:           http://zhangwenli.com/blog/2014/08/03/make-your-own-social-sharing-bar-with-jekyll/
+[Disqus Admin Center]: https://disqus.com/admin/

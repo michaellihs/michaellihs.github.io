@@ -58,3 +58,10 @@ To start a local server with Jekyll, run
 from the root directory of this repository. Afterwards you can access the blog on [http://localhost:4000/](http://localhost:4000/) on your local machine.
 
 While Jekyll is running, a file watcher will detect all the changes to your blog files and rebuild all artifacts if needed.
+
+
+TODOs
+-----
+
+* Take a look at MetaData and SEO from http://www.fastcompany.com/3044352/the-secrets-of-holacracy
+* Improve privacy concerning Disqus comments by first disabling them and using JavaScript switch to enable them - see http://panzi.github.io/SocialSharePrivacy/

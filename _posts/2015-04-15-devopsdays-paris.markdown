@@ -11,7 +11,7 @@ The [DevOpsDays] are kind of an alternative conference covering - well - DevOps 
 
 ## Keynotes, Talks and Open Space
 
-Every DevOps event is more or less organized in a fixed setting. There are talks in the morning and something called [Open Space] in the afternoon. For bridging the gaps between the talks and explaining things to the audience, there was a moderator guiding through the day(s). The first morning
+Every DevOps event is more or less organized in a fixed setting. There are talks in the morning and something called [Open Space] in the afternoon. For bridging the gaps between the talks and explaining things to the audience, there was a moderator guiding through the day(s).
 
 ## First Day - Talks
 
@@ -355,6 +355,7 @@ Thanks a lot to all the people that made this event possible and the sponsors!
 [DevOps Checklist]: http://devopschecklist.com/
 [Sabine Bernecker-Bendixen]: https://twitter.com/SabineBendixen
 [they bought Mitfahrgelegenheit.de]: http://www.deutsche-startups.de/2015/04/15/blablacar-uebernimmt-mitfahrgelegenheit-de/
+[BlaBlaCar]: https://www.blablacar.de/
 [Regis Allegre]: https://twitter.com/metalmumu
 [Nicolas Blanc]: https://twitter.com/thewhitegeek
 [Videos from the Docker Blog]: https://blog.docker.com/2015/03/docker-tutorial-1-installing-docker/
@@ -371,3 +372,4 @@ Thanks a lot to all the people that made this event possible and the sponsors!
 [Pierre-Yves Ritschard]: https://twitter.com/pyr
 [Dirk Lehmann]: https://twitter.com/doergn
 [Oliver Hankeln]: https://twitter.com/mydalon
+[ITIL - Information Technology Infrastructure Library]: https://www.axelos.com/best-practice-solutions/itil/what-is-itil

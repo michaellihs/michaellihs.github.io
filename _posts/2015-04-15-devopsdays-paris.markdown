@@ -165,6 +165,8 @@ Another term we know from industrial production is changeover time. This can als
 
 Move from Quality control to Quality assurance and from quality inspectors to quality trainers. Don't spend time on checking every item but use a significant sample instead. Use the time saved to train your people in sense of how to prevent the quality issues you discovered. This can directly be transferred to a peer-review based quality assurance, e.g. with code review.
 
+[slides](http://de.slideshare.net/sc0ttruss/designing-the-enterprise-for-manufacturing)
+
 
 ### Change management at scale: responsible agile delivery
 
@@ -173,6 +175,8 @@ Move from Quality control to Quality assurance and from quality inspectors to qu
 He recommended avoiding blocking management instruments like meetings or boards when it comes to changes and rather rely on peer review and auto-validated change mechanisms.
 
 A interesting tool he mentioned is [WARP](https://github.com/pyr/warp).
+
+[slides](https://speakerdeck.com/pyr/change-management-at-scale)
 
 
 ### Making the Elephant dance – Daily deliveries at SAP
@@ -343,6 +347,11 @@ Open Space Slot 3: Organizational Structures for DevOps
 DevOpsDays Paris was a great experience - starting with the location, the food, the people and of course the inspiring talks and sessions. I can definitely recommend going there. Given the fact that this is a non-profit event and the fees are comparably low (at least when compared to other conferences) - this is a must-go for all people interested in DevOps. The topics  made a really nice mix of rather abstract stuff in the talks and more technical things in the sessions in the afternoon.
 
 Thanks a lot to all the people that made this event possible and the sponsors!
+
+
+## Further Resources
+
+* [Notes from Steve Pereira](https://gist.github.com/stevepereira/aa2b0ab9edbdf9f0693e)
 
 
 

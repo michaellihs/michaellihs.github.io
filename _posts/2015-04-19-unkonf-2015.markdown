@@ -1,0 +1,132 @@
+---
+layout: post
+title:  "unkonf 2015"
+summary: "Short Recap of the unkonf 2015"
+date:   2015-04-19 13:30:00
+categories: conferences
+tags: ['unkonf', 'conferences']
+---
+
+Yesterday I attended my first un-conference: [UnKonf] in Mannheim. Here is a short summary of the sessions I attended and the discussions before, during and after the talks. Thanks a lot to [bitmotion] for organizing this great event. To get an overview of all the sessions, you can take a look at [joind.in] and [lanyrd.com].
+
+
+## Keynote - Developers Are Humans
+
+Keynote speaker [@skoop]
+
+* What has a singer got to do with coding - quite a lot
+  * Culture of asking
+  * Using kickstarter instead of record company
+  * Book from Amanda Palmer ["The Art of Asking"]
+* UWCY - use what you can
+  * Do not re-invent things over and over
+  * Opposite of "Not invented here!"
+* Coding as art
+* Be proud of what you do
+
+## Ionic
+
+* Speaker [Marcel Engelmann](https://twitter.com/marcelengelmann)
+* Write Apps for multiple platforms [ionic framework](http://ionicframework.com/)
+* Alternatives:
+  * Phonegap: Develop Apps with HTML and JavaScript
+    * There seem to be licensing issues
+  * Apache Cordova: no licensing issues
+* Features and Usage
+  * Start App with `ionic start`
+  * Commands on command line
+    * kickstart application
+    * simulate application
+    * start application (on device?)
+* Available platforms
+  * android, ios, browser, amazon fireos, blackberry, firefox os
+* Ionic creator [http://ionicframework.com/creator/]
+  * [ionic creator](https://creator.ionic.io/)
+* cordova plugins [http://ngcordova.com/docs/plugins/]
+* PhoneGap app for device testing [http://phonegap.com/]
+* Don't use it, if
+  * if performance is critical for your app
+* no internationlization in iconic so far?
+
+
+## Automate yourDevelopment Environmentwith Vagrant & Chef
+
+* Motivation for using Vagrant
+  * Faster setup of development environments for (web) projects
+  * Faster changeover time (switching between projects, swichting between project variants)
+  * Easier collaboration with collegues (don't just give them your code but the whole environment)
+  * Follows the "You build it - you run it!" paradigm
+* Biggest problem: file performance on shared folders -- [blog post about file system performance](http://bit.ly/19kjpDG)
+  * 4 possibilities
+    * NFS shares
+    * SMB shares
+    * VirtualBox shared folders
+    * rsync from host to virtual machine
+
+
+## Responsive Web Design ohne BreakPoints
+
+* Maintainability of CSS is a problem
+* What happens with Breakpoints:
+  * Content is re-arranged
+    * Changes in  "best possible arrangement" might make content less useful
+    * Might lead to UX problems
+* Alternative: Responsive Typography [https://ia.net/de/know-how/responsive-typography-the-basics]
+  * Distance to the text is an important factor for readability
+    * Reading-distance differs for different devices
+  * Think about scaling of content instead of re-arranging and hiding
+  * Aspect Ratio as an important criteria for content size
+* Use only one breakpoint: Landscape or Portrait
+  * Only 2 designs left that you only have to scale - no re-arrangement of content anymore
+
+
+## VersionEye
+
+* VersionEye notifies you about outdated dependencies in your software projects
+* [http://versioneye.com]
+* "License Distribution in Github projects"
+  * [https://help.github.com/articles/open-source-licensing/]
+  * [http://choosealicense.com/]
+  * [https://github.com/blog/1530-choosing-an-open-source-license]
+  * [https://github.com/blog/1964-open-source-license-usage-on-github-com]
+* Further Tools [https://www.blackducksoftware.com/]
+
+
+## Continuous Delivery, DevOps & Innovation
+
+* Introduction of Lean principles and their parallels in software development
+* Build, Measure, Learn Feedback Loop
+* Assembly Line = Delivery Pipeline
+* DevOps = minimize changeover time
+* Problems:
+  * What happens if you are working in a client server environment and not only deliver a server application but a client application as well
+  * How can you control updates of clients
+
+
+## Internet Of Things
+
+* @MongoDbMannheim
+* @opotoc
+* hendorf@opotoc.com
+
+
+## Static with CMS
+
+Nice idea of combining
+
+* [Contentful]
+* [Roots]
+* [Netlify]
+
+as a static CMS. The main idea of the talk can be found here [http://carrot.is/coding/static_cms].
+
+
+
+[UnKonf]: http://www.unkonf.de
+[joind.in]: https://joind.in/event/view/3336
+[lanyrd.com]: http://lanyrd.com/2015/unkonf/
+["The Art of Asking"]: http://amandapalmer.net/
+[@skoop]: https://twitter.com/skoop
+[Contentful]: https://www.contentful.com/
+[Roots]: https://github.com/jenius/roots
+[Netlify]: https://www.netlify.com/

@@ -7,7 +7,7 @@ categories: conferences
 tags: ['unkonf', 'conferences']
 ---
 
-Yesterday I attended my first un-conference: [UnKonf] in Mannheim. Here is a short summary of the sessions I attended and the discussions before, during and after the talks. Thanks a lot to [bitexpert] for organizing this great event. To get an overview of all the sessions, you can take a look at [joind.in] and [lanyrd.com].
+Yesterday I attended my first un-conference: [UnKonf] in Mannheim. Here is a short summary of the sessions I attended and the discussions before, during and after the talks. Thanks a lot to [bitExpert] for organizing this great event. To get an overview of all the sessions, you can take a look at [joind.in] and [lanyrd.com].
 
 
 ## Keynote - Developers Are Humans
@@ -121,7 +121,7 @@ as a static CMS. The main idea of the talk can be found here [http://carrot.is/c
 
 
 
-[bitexpert]: https://www.bitexpert.de/
+[bitExpert]: https://www.bitexpert.de/
 [UnKonf]: http://www.unkonf.de
 [joind.in]: https://joind.in/event/view/3336
 [lanyrd.com]: http://lanyrd.com/2015/unkonf/

@@ -40,10 +40,10 @@ Keynote speaker [@skoop]
     * start application (on device?)
 * Available platforms
   * android, ios, browser, amazon fireos, blackberry, firefox os
-* Ionic creator [http://ionicframework.com/creator/]
+* Ionic creator [http://ionicframework.com/creator/](http://ionicframework.com/creator/)
   * [ionic creator](https://creator.ionic.io/)
-* cordova plugins [http://ngcordova.com/docs/plugins/]
-* PhoneGap app for device testing [http://phonegap.com/]
+* cordova plugins [http://ngcordova.com/docs/plugins/](http://ngcordova.com/docs/plugins/)
+* PhoneGap app for device testing [http://phonegap.com/](http://phonegap.com/)
 * Don't use it, if
   * if performance is critical for your app
 * no internationlization in iconic so far?
@@ -71,7 +71,7 @@ Keynote speaker [@skoop]
   * Content is re-arranged
     * Changes in  "best possible arrangement" might make content less useful
     * Might lead to UX problems
-* Alternative: Responsive Typography [https://ia.net/de/know-how/responsive-typography-the-basics]
+* Alternative: Responsive Typography [https://ia.net/de/know-how/responsive-typography-the-basics](https://ia.net/de/know-how/responsive-typography-the-basics)
   * Distance to the text is an important factor for readability
     * Reading-distance differs for different devices
   * Think about scaling of content instead of re-arranging and hiding
@@ -83,13 +83,13 @@ Keynote speaker [@skoop]
 ## VersionEye
 
 * VersionEye notifies you about outdated dependencies in your software projects
-* [http://versioneye.com]
+* [http://versioneye.com](http://versioneye.com)
 * "License Distribution in Github projects"
-  * [https://help.github.com/articles/open-source-licensing/]
-  * [http://choosealicense.com/]
-  * [https://github.com/blog/1530-choosing-an-open-source-license]
-  * [https://github.com/blog/1964-open-source-license-usage-on-github-com]
-* Further Tools [https://www.blackducksoftware.com/]
+  * [https://help.github.com/articles/open-source-licensing/](https://help.github.com/articles/open-source-licensing/)
+  * [http://choosealicense.com/](http://choosealicense.com/)
+  * [https://github.com/blog/1530-choosing-an-open-source-license](https://github.com/blog/1530-choosing-an-open-source-license)
+  * [https://github.com/blog/1964-open-source-license-usage-on-github-com](https://github.com/blog/1964-open-source-license-usage-on-github-com)
+* Further Tools [https://www.blackducksoftware.com/](https://www.blackducksoftware.com/)
 
 
 ## Continuous Delivery, DevOps & Innovation
@@ -105,9 +105,8 @@ Keynote speaker [@skoop]
 
 ## Internet Of Things
 
-* @MongoDbMannheim
-* @opotoc
-* hendorf@opotoc.com
+* There is a MongoDB meetup in Mannheim [http://www.twitter.com/MongoDbMannheim](http://www.twitter.com/MongoDbMannheim)
+* [http://www.twitter.com/opotoc](http://www.twitter.com/opotoc)
 
 
 ## Static with CMS
@@ -118,7 +117,7 @@ Nice idea of combining
 * [Roots]
 * [Netlify]
 
-as a static CMS. The main idea of the talk can be found here [http://carrot.is/coding/static_cms].
+as a static CMS. The main idea of the talk can be found here [http://carrot.is/coding/static_cms](http://carrot.is/coding/static_cms).
 
 
 

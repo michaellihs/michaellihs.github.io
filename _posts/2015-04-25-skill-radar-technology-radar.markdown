@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Skill Radar & Technology Radar"
+title:  "Skill Radar and Technology Radar"
 summary: "How to keep track of your skills, innovation and learning."
 date:   2015-04-25 13:30:00
 categories: learning

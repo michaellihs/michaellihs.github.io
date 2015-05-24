@@ -49,7 +49,7 @@ Keynote speaker [@skoop]
 * no internationlization in iconic so far?
 
 
-## Automate yourDevelopment Environmentwith Vagrant & Chef
+## Vagrant and Chef
 
 * Motivation for using Vagrant
   * Faster setup of development environments for (web) projects
@@ -92,7 +92,7 @@ Keynote speaker [@skoop]
 * Further Tools [https://www.blackducksoftware.com/](https://www.blackducksoftware.com/)
 
 
-## Continuous Delivery, DevOps & Innovation
+## Continuous Delivery, DevOps and Innovation
 
 * Introduction of Lean principles and their parallels in software development
 * Build, Measure, Learn Feedback Loop

@@ -6,7 +6,7 @@ permalink: /about/
 
 Welcome to my blog! My name is Michael Lihs and I live in Karlsruhe, Germany. The topics on this blog originate from some of my professional and leisure activities.
 
-Currently I'm working for a company called [punkt.de] in Karlsruhe and mainly do
+At my current as a web developer I mainly do
 
 * [TYPO3 CMS] and [TYPO3 Flow] Backend development
 * [solr search] integration
@@ -17,7 +17,6 @@ In my blog posts I want to share some of my experience with those tools and prov
 
 If you have any questions, feel free to contact me any time.
 
-[punkt.de]:				http://www.punkt.de
 [TYPO3 CMS]:			http://www.typo3.org
 [TYPO3 Flow]:			http://flow.typo3.org
 [solr search]:			http://lucene.apache.org/solr/

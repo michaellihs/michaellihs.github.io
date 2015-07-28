@@ -1,0 +1,419 @@
+---
+layout: post
+title:  "ChefSpec Cheat Sheet"
+date:   2015-07-28 21:00:00
+tags: ['chef', 'testing', 'continuous integration']
+categories: devops
+---
+
+When it comes to testing your Chef cookbooks, currently there seem to be two tools that build the standard in the Chef community: [ChefSpec][chefspec] and [Test Kitchen][testkitchen] (with [Serverspec][serverspec], which is the third tool). Where Serverspec can be used for an outside-in testing approach for your infrastructure, ChefSpec is more like unit testing or *input testing* for your Chef cookbooks. In this blogpost I'll try to provide some best practices and snippets for common use cases.
+
+ChefSpec's goal is to simulate a convergence run of Chef in-memory and test expected behavior against this in-memory results. Due to only converging the node in-memory, it provides fast feedback thus making an ideal test framework for a commit stage in a Continuous Integration pipeline for your cookbooks.
+
+
+
+ChefSpec Setup
+==============
+
+Let's assume you have a cookbook structure like this:
+
+{% highlight text %}
+.
+├── Gemfile
+├── README.md
+├── attributes
+│   └── default.rb
+├── metadata.rb
+├── recipes
+│   └── default.rb
+└── spec
+    ├── recipe_default_spec.rb
+    └── spec_helper.rb
+{%endhighlight %}
+
+In order to use ChefSpec in your cookbook, make sure to add it to your `Gemfile`
+
+{% highlight ruby %}
+source 'https://rubygems.org'
+gem 'chefspec'
+{%endhighlight %}
+
+After you created your `Gemfile`, run `bundle install` to install all dependencies.
+
+The `spec_helper.rb` configures the rspec framework and looks like this:
+
+{% highlight ruby %}
+require 'chefspec'
+
+Dir['*_spec.rb'].each { |f| require File.expand_path(f) }
+at_exit { ChefSpec::Coverage.report! }
+{%endhighlight %}
+
+All you have to do to run ChefSpec is to go to the root of your cookbook and run `rspec`:
+
+{% highlight text %}
+$ rspec
+
+app_virtualbox::default
+  adds the expected apt repository
+  installs expected apt package for VirtualBox
+  installs expected apt package for dkms
+
+Finished in 0.3915 seconds (files took 2.52 seconds to load)
+3 examples, 0 failures
+
+
+ChefSpec Coverage report generated...
+
+  Total Resources:   3
+  Touched Resources: 3
+  Touch Coverage:    100.0%
+
+You are awesome and so is your test coverage! Have a fantastic day!
+{%endhighlight %}
+
+
+
+Writing your first Spec
+=======================
+
+Given the following recipe that you want to write a spec for:
+
+{% highlight ruby %}
+apt_repository 'oracle-virtualbox' do
+  uri 'http://download.virtualbox.org/virtualbox/debian'
+  key 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc'
+  distribution 'trusty'
+  components ['contrib']
+end
+
+package "virtualbox-#{node['virtualbox']['version']}" do
+  action :install
+end
+
+package 'dkms' do
+  action :install
+end
+{%endhighlight %}
+
+here's how this spec might look like:
+
+{% highlight ruby linenos %}
+require 'spec_helper'
+
+describe 'app_virtualbox::default' do
+
+  virtual_box_version = '5.0'
+
+  let(:chef_run) do
+    ChefSpec::SoloRunner.new do | node |
+      node.set['virtualbox']['version']= virtual_box_version
+    end.converge(described_recipe)
+  end
+
+  it 'adds the expected apt repository' do
+    expect(chef_run).to add_apt_repository('oracle-virtualbox').with(
+      :uri => 'http://download.virtualbox.org/virtualbox/debian',
+      :key => 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc',
+      :distribution => 'trusty',
+      :components => ['contrib']
+    )
+  end
+
+  it 'installs expected apt package for VirtualBox' do
+    expect(chef_run).to install_package("virtualbox-#{virtual_box_version}")
+  end
+
+  it 'installs expected apt package for dkms' do
+    expect(chef_run).to install_package('dkms')
+  end
+
+end
+{%endhighlight %}
+
+In line 3 we open a `describe` block for the recipe under test (`app_virtualbox::default`). Line 7 simulates the Chef run - in memory, as I described before - and "overrides" a few node attributes that we'll use in our specs later.
+
+Line 14 shows how we can assert that resources have been invoked by our Chef run. The `add_apt_package` method is a so-called matcher, which is defined for every resource that ships with Chef in the ChefSpec framework (see the extensive [example folder][example section] on Github for a complete list of default matchers and their usage). Additional matchers can either be defined in your own cookbooks or community cookbooks or can be added to your specs for those cookbooks, which do not define their own matchers as we'll see later.
+
+Using the `with` method in line 114, you can further specify the attributes that you want the resource to be called with.
+
+Running this spec, the output will look like this (given you use the parameters `-f d -c` when calling `rspec`):
+
+{% highlight text %}
+$ rspec -f d -c
+
+app_virtualbox::default
+  adds the expected apt repository
+  installs expected apt package for VirtualBox
+  installs expected apt package for dkms
+
+Finished in 0.3915 seconds (files took 2.52 seconds to load)
+3 examples, 0 failures
+{% endhighlight %}
+
+
+
+"Advanced" Use Cases
+--------------------
+
+### Mocking Recipe Inclusion
+
+Let's say you have a recipe that includes two other recipes:
+
+{% highlight ruby %}
+include_recipe 'java'
+include_recipe 'jenkins::master'
+{% endhighlight %}
+
+and you want to test whether your recipe includes the expected recipes (and only those), then you can use the following spec to do this:
+
+{% highlight ruby %}
+require 'spec_helper'
+
+describe 'app_jenkins_master::default' do
+  let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
+
+  before do
+    allow_any_instance_of(Chef::Recipe)
+      .to receive(:include_recipe).with('java')
+    allow_any_instance_of(Chef::Recipe)
+      .to receive(:include_recipe).with('jenkins::master')
+    allow_any_instance_of(Chef::Recipe)
+  end
+
+  it "includes the java cookbook" do
+    expect_any_instance_of(Chef::Recipe)
+      .to receive(:include_recipe).with(java)
+    chef_run
+  end
+
+  it "includes the jenkins::master cookbook" do
+    expect_any_instance_of(Chef::Recipe)
+      .to receive(:include_recipe).with(jenkins::master)
+    chef_run
+  end
+
+end
+{% endhighlight %}
+
+
+
+### Mocking Data Bags
+
+If your recipe under test uses a data bag:
+
+{% highlight ruby %}
+projects_databag = data_bag_item('jenkins', 'projects')
+projects_databag['projects'].each do | project_id, project_config |
+  # ...
+end
+{%endhighlight%}
+
+you can mock them as well:
+
+{%highlight ruby %}
+require 'spec_helper'
+
+describe 'cookbook::jenkins_jobs' do
+
+  let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
+
+  databag_stub = {
+    :projects => {
+      :app_chef_node => {
+        :project_type => 'type1',
+        :repository_url => 'git@github.com:user/repos1.git'
+      },
+      :app_jenkins_master => {
+        :project_type => 'type2',
+        :repository_url => 'git@github.com:user/repos2.git'
+      }
+    }
+  }
+
+  before do
+    stub_data_bag_item('jenkins', 'projects').and_return(databag_stub)
+  end
+
+  databag_stub[:projects].each do | project_id, project_config |
+
+    # ...
+
+  end
+{%endhighlight %}
+
+
+
+### Mocking Shell Commands a.k.a. Guards
+
+Given you use a shell command in a `not_if` attribute in your resource:
+
+{%highlight ruby %}
+execute 'install dpkg package libgecode' do
+  command 'sudo dpkg -i libgecode /tmp/libgcode.deb'
+  not_if "apt-cache show libgecode | grep 1.7.4"
+end
+{%endhighlight %}
+
+and you want to stub this command to either return true or false in your spec, use this snippet:
+
+{%highlight ruby%}
+require 'spec_helper'
+
+describe 'cookbook::packages' do
+
+  stubbed_command = 'apt-cache show libgecode | grep 1.7.4'
+
+  let(:chef_run) { ChefSpec::SoloRunner.new().converge(described_recipe) }
+
+  describe 'installs the expected dpkg packages if they are missing' do
+      before(:each) do
+        stub_command(stubbed_command).and_return(false)
+      end
+
+      describe 'what to do if command returns FALSE' do
+        # ...
+      end
+
+    end
+
+  end
+
+  describe 'does not install the expected packages if they are already available' do
+      before(:each) do
+        stub_command(stubbed_command).and_return(true)
+      end
+
+      describe 'what to do if command returns TRUE' do
+        # ...
+      end
+
+    end
+  end
+
+end
+{%endhighlight%}
+
+
+
+### Write Custom Matchers
+
+If you are using a 3rd-party cookbook that does not provide a matcher for a resource defined within this cookbook, you can write your own matcher. Let's say you have this resource in your recipe (it actually doesn't provide a matcher!):
+
+{% highlight ruby %}
+ssh_known_hosts_entry 'my.host.com' do
+  key 'the_host_key'
+end
+{% endhighlight %}
+
+then you can write a matcher `ssh_known_hosts_entry_matcher.rb` file like this:
+
+{%highlight ruby %}
+if defined?(ChefSpec)
+
+  ChefSpec.define_matcher :ssh_known_hosts_entry
+
+  #
+  # Matches, if known_hosts_entry resource was called
+  #
+  # @example This is an example
+  #   expect(chef_run).to create_ssh_known_hosts_entry('HOST')
+  #
+  # @param [String] resource_name
+  #   the resource name
+  #
+  # @return [ChefSpec::Matchers::ResourceMatcher]
+  #
+  def create_ssh_known_hosts_entry(resource_name)
+    ChefSpec::Matchers::ResourceMatcher.new(:ssh_known_hosts_entry, :create, resource_name)
+  end
+end
+{%endhighlight %}
+
+and include it in your `spec_helper.rb` like that:
+
+{% highlight ruby %}
+require 'chefspec'
+
+require_relative 'ssh_known_hosts_entry_matcher'
+
+Dir['*_spec.rb'].each { |f| require File.expand_path(f) }
+{% endhighlight %}
+
+If you have several matchers that you have to implement on your own, you might come up with a folder structure like this:
+
+{% highlight text %}
+spec
+├── custom_matchers
+│   ├── rbenv_matcher.rb
+│   └── ssh_known_hosts_entry_matcher.rb
+├── ... your specs ...
+└── spec_helper.rb
+{% endhighlight %}
+
+and you can use the following snippet in your `spec_helper.rb` to include those matchers:
+
+{% highlight ruby %}
+Dir.glob("#{File.dirname(__FILE__)}/custom_matchers/*_matcher.rb").each { |matcher_implementation| require matcher_implementation }
+{% endhighlight %}
+
+
+
+### Using ChefSpec with Berkshelf
+
+In case you are using Berkshelf for cookbook dependency management, simply add the following line to your `spec_helper.rb`:
+
+{% highlight ruby %}
+require 'chefspec/berkshelf'
+{% endhighlight %}
+
+ChefSpec will then automatically resolve cookbook dependencies for you.
+
+
+
+### Test Coverage
+
+The following snippet in your `spec_helper.rb` file will switch test coverage on:
+
+{% highlight ruby %}
+at_exit { ChefSpec::Coverage.report! }
+{% endhighlight %}
+
+In your rspec output you will then find something like this:
+
+{%highlight text%}
+ChefSpec Coverage report generated...
+
+  Total Resources:   3
+  Touched Resources: 3
+  Touch Coverage:    100.0%
+
+You are awesome and so is your test coverage! Have a fantastic day!
+{%endhighlight%}
+
+
+
+### .rspec File
+
+You can add a file `.rspec` in your cookbook's root directory that holds a default configuration for your rspec test runs:
+
+{%highlight text %}
+--color
+--format documentation
+{%endhighlight %}
+
+this will result in a colored output with the decriptions in the `describe` and `it` blocks rendered as output on the shell.
+
+
+
+## Further Resources
+
+* [The RSpec Documentation](http://rspec.info/documentation/)
+* [Using ChefSpec in Continuous Integration (slides)](http://de.slideshare.net/zts/cookbook-ci-with-jenkins)
+
+
+
+[chefspec]:        https://github.com/sethvargo/chefspec
+[testkitchen]:     http://kitchen.ci/
+[serverspec]:      http://serverspec.org/
+[example section]: https://github.com/sethvargo/chefspec/tree/master/examples

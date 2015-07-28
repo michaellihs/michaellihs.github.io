@@ -6,6 +6,18 @@ permalink: /talks/
 
 ## 2015
 
+#### Continuous Delivery - Patterns and Anti-Patterns <br>(TYPO3 Developer Days 2015, Nürnberg)
+
+[![Slides for Chef, Vagrant and TYPO3][8]][7]
+
+#### Chef, Vagrant and TYPO3 (TYPO3 Developer Days 2015, Nürnberg)
+
+[![Slides for Chef, Vagrant and TYPO3][6]][5]
+
+#### Behavior Driven Development with Behat <br>(TYPO3 Developer Days 2015, Nürnberg)
+
+[![Slides for Behavior Driven Development with Behat][4]][3]
+
 #### Go Lean (TYPO3 Camp, Stuttgart)
 
 [![Slides for Go Lean][2]][1]
@@ -53,5 +65,14 @@ permalink: /talks/
 <iframe src="//de.slideshare.net/slideshow/embed_code/key/e1kZ79gsZqLYFw" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 
-  [1]: http://michaellihs.github.io/showoff-presentation-lean/
-  [2]: /assets/images/talks/go_lean.png
+[1]: http://michaellihs.github.io/showoff-presentation-lean/
+[2]: /assets/images/talks/go_lean.png
+
+[3]: http://michaellihs.github.io/showoff-presentation-behat
+[4]: /assets/images/talks/bdd_behat.png
+
+[5]: http://michaellihs.github.io/showoff-presentation-vagrant_chef_typo3
+[6]: /assets/images/talks/chef_vagrant_typo3.png
+
+[7]: http://michaellihs.github.io/showoff-presentation-ci_patterns
+[8]: /assets/images/talks/ci_patterns_antipatterns.png

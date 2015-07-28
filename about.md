@@ -6,7 +6,7 @@ permalink: /about/
 
 Welcome to my blog! My name is Michael Lihs and I live in Karlsruhe, Germany. The topics on this blog originate from some of my professional and leisure activities.
 
-At my current as a web developer I mainly do
+At my current job as a web developer I mainly do
 
 * [TYPO3 CMS] and [TYPO3 Flow] Backend development
 * [solr search] integration

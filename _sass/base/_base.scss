@@ -101,6 +101,12 @@ a {
 }
 
 
+dd {
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+
+
 
 /**
  * Blockquotes
@@ -125,10 +131,12 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
+	font-family: $monospace-font-family;
+    font-size: 13px;
     border: 1px solid $grey-color-lighter;
     border-radius: 3px;
     background-color: $code-background;
+	line-height: 1.42857143;
 }
 
 code {

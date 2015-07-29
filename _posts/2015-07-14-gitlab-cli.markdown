@@ -134,3 +134,38 @@ gitlab users "{per_page: 1000}" | grep "USERNAME"
 Remind that the <code>per_page: 1000</code> option makes sure that "all" users are returned!
 </li>
 </ul>
+
+### Gitlab Merge Requests
+
+<ul>
+<li> Given you have a branch SOURCE_BRANCH that you want to merge into master in a project with id PROJECT_ID and assign the merge request to a user with id ASSIGNEE_ID, you can use the following command:
+{% highlight sh startinline=true %}
+gitlab create_merge_request PROJECT_ID 'Titel of the Merge Request' \
+    '{source_branch: 'SOURCE_BRANCH', \
+      target_branch: 'master', \
+      assignee_id: ASSIGNEE_ID}'
+{%endhighlight %}
+</li>
+</ul>
+
+## Global Parameters
+
+### `--only=`
+
+You can add the `--only=` parameter to any command and restrict the fields to be shown in the result table. E.g.
+
+{% highlight sh %}
+gitlab project_search chef_ --only=name,id
+
++-----+---------------------------------------+
+| Gitlab.project_search chef_, --only=name,id |
++-----+---------------------------------------+
+| id  | name                                  |
++-----+---------------------------------------+
+| 649 | chef_base_freebsd                     |
++-----+---------------------------------------+
+| 646 | chef_app_mysql                        |
++-----+---------------------------------------+
+| 645 | chef_app_apache                       |
++-----+---------------------------------------+
+{% endhighlight %}

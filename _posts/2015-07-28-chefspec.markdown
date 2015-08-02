@@ -12,8 +12,7 @@ ChefSpec's goal is to simulate a convergence run of Chef in-memory and test expe
 
 
 
-ChefSpec Setup
-==============
+# ChefSpec Setup
 
 Let's assume you have a cookbook structure like this:
 
@@ -244,7 +243,7 @@ describe 'cookbook::jenkins_jobs' do
 
 
 
-### Mocking Shell Commands a.k.a. Guards
+### Mocking Shell Commands (e.g. for `not_if` conditions)
 
 Given you use a shell command in a `not_if` attribute in your resource:
 
@@ -293,6 +292,69 @@ describe 'cookbook::packages' do
 
 end
 {%endhighlight%}
+
+
+
+### Mocking `File.exists?` and `IO.read`
+
+Let's assume, you want to test a recipe like this:
+
+{% highlight ruby %}
+timezone_active_path = '/etc/localtime'
+timezone_source_dir = '/usr/share/zoneinfo'
+
+timezone_content_path = "#{timezone_source_dir}/#{node['timezone']}"
+
+raise(ArgumentError, "Zoneinfo specified in node['timezone'] not found in #{timezone_source_dir}: #{node['timezone']}") unless File.exists? timezone_content_path
+
+file timezone_active_path do
+  content IO.read(timezone_content_path)
+  action :create
+  owner 'root'
+  group 'wheel'
+  mode 0444
+end
+{% endhighlight %}
+
+Therefore, you have to figure out, how to mock a call to `File.exists?` and `IO.read` in order to mock out the behavior and check whether an exception is raised in the expected circumstances. You can do that with this `before` block:
+
+{% highlight ruby %}
+before(:each) do
+  allow(File).to receive(:exists?).with(anything).and_call_original
+  allow(File).to receive(:exists?).with('/path/to/file').and_return true
+  allow(IO).to receive(:read).with(anything).and_call_original
+  allow(IO).to receive(:read).with('/path/to/file').and_return 'file content'
+end
+{% endhighlight %}
+
+
+
+### Testing for raised exceptions during Chef run
+
+Assume you have a recipe code like this:
+
+{% highlight ruby %}
+raise(ArgumentError, "Some error message") unless File.exists? '/path/to/file'
+{% endhighlight %}
+
+Then you can check for the exception being raised in your Chef run using
+
+{% highlight ruby %}
+describe 'what happens if file does not exist' do
+
+  let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
+
+  before(:each) do
+    allow(File).to receive(:exists?).with(anything).and_call_original
+    allow(File).to receive(:exists?).with('/path/to/file').and_return false
+  end
+
+  it 'fails with ArgumentError' do
+    expect{chef_run}.to raise_error(ArgumentError)
+  end
+
+end
+{% endhighlight %}
 
 
 
@@ -393,7 +455,7 @@ You are awesome and so is your test coverage! Have a fantastic day!
 
 
 
-### .rspec File
+### The `.rspec` File
 
 You can add a file `.rspec` in your cookbook's root directory that holds a default configuration for your rspec test runs:
 
@@ -410,6 +472,8 @@ this will result in a colored output with the decriptions in the `describe` and 
 
 * [The RSpec Documentation](http://rspec.info/documentation/)
 * [Using ChefSpec in Continuous Integration (slides)](http://de.slideshare.net/zts/cookbook-ci-with-jenkins)
+* [Blog Post: Test Driven Infrastructure with Chef](https://www.chef.io/blog/2015/04/21/overview-of-test-driven-infrastructure-with-chef/)
+* [Book: Test Driven Infrastructure with Chef](http://shop.oreilly.com/product/0636920030973.do)
 
 
 

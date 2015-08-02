@@ -12,7 +12,7 @@ ChefSpec's goal is to simulate a convergence run of Chef in-memory and test expe
 
 
 
-# ChefSpec Setup
+## ChefSpec Setup
 
 Let's assume you have a cookbook structure like this:
 
@@ -73,8 +73,7 @@ You are awesome and so is your test coverage! Have a fantastic day!
 
 
 
-Writing your first Spec
-=======================
+## Writing your first Spec
 
 Given the following recipe that you want to write a spec for:
 
@@ -152,8 +151,7 @@ Finished in 0.3915 seconds (files took 2.52 seconds to load)
 
 
 
-"Advanced" Use Cases
---------------------
+## "Advanced" Use Cases
 
 ### Mocking Recipe Inclusion
 

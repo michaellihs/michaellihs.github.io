@@ -327,6 +327,45 @@ end
 
 
 
+### Notifications to other resources
+
+Let's assume we have a service resource for the Apache server like this
+
+{% highlight ruby %}
+service 'apache22' do
+  supports :status => true, :start => true, :stop => true, :restart => true
+  action :enable
+end
+{% endhighlight %}
+
+and another resource that writes a configuration file, which should effect a restart of the Apache server
+
+{% highlight ruby %}
+cookbook_file '/usr/local/etc/apache22/modules.d/010_fcgid.conf' do
+  source '010_fcgid.conf'
+  owner 'root'
+  group 'wheel'
+  mode '0644'
+  action :create
+  notifies :restart, 'service[apache22]', :delayed
+end
+{% endhighlight %}
+
+then you can use the following Chefspec test to check whether the notification happens:
+
+{% highlight ruby %}
+it "creates a configuration file `/usr/local/etc/apache22/modules.d/010_fcgid.conf`" do
+  expect(chef_run).to create_cookbook_file(/usr/local/etc/apache22/modules.d/010_fcgid.conf).with(
+                        owner:    'root',
+                        group:    'wheel',
+                        mode:     '0644',
+                        source:   '010_fcgid.conf'
+                      )
+  cookbook_file = chef_run.cookbook_file('/usr/local/etc/apache22/modules.d/010_fcgid.conf')
+  expect(cookbook_file).to notify("service[apache22]")
+end
+{% endhighlight %}
+
 ### Testing for raised exceptions during Chef run
 
 Assume you have a recipe code like this:
@@ -419,7 +458,7 @@ Dir.glob("#{File.dirname(__FILE__)}/custom_matchers/*_matcher.rb").each { |match
 
 
 
-### Using ChefSpec with Berkshelf
+## Using ChefSpec with Berkshelf
 
 In case you are using Berkshelf for cookbook dependency management, simply add the following line to your `spec_helper.rb`:
 
@@ -431,7 +470,7 @@ ChefSpec will then automatically resolve cookbook dependencies for you.
 
 
 
-### Test Coverage
+## Test Coverage
 
 The following snippet in your `spec_helper.rb` file will switch test coverage on:
 
@@ -453,7 +492,7 @@ You are awesome and so is your test coverage! Have a fantastic day!
 
 
 
-### The `.rspec` File
+## The .rspec File
 
 You can add a file `.rspec` in your cookbook's root directory that holds a default configuration for your rspec test runs:
 
@@ -464,6 +503,20 @@ You can add a file `.rspec` in your cookbook's root directory that holds a defau
 
 this will result in a colored output with the decriptions in the `describe` and `it` blocks rendered as output on the shell.
 
+
+
+## Rake Helper Task
+
+A simple Rake task can help you to run all ChefSpec tests in a subdirectory at once. Let's assume that your coobooks are stored in a subfolder `cookbooks`:
+
+{% highlight ruby %}
+desc 'Runs ChefSpec tests on all cookbooks in the `cookbooks` directory'
+task :chefspec do |t, args|
+  Dir.glob('cookbooks/*') do |cookbook|
+    sh "cd cookbooks/#{cookbook} && bundle exec rspec"
+  end
+end
+{% endhighlight %}
 
 
 ## Further Resources

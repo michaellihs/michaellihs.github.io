@@ -65,7 +65,7 @@ gitlab project_search NAME
 
 <li>Create a project in your Gitlab userspace:
 {% highlight sh startinline=true %}
-gitlab project_create PROJECT_NAME
+gitlab create_project PROJECT_NAME
 {%endhighlight %}
 </li>
 
@@ -74,7 +74,7 @@ Create a project in a distinct group:
 <br><br>
 First: Find the Gitlab ID of the group you want to add your project to with <br>	<code>gitlab groups "{per_page: 1000}" | grep GROUP_NAME</code>.<br><br> Then use this ID as in:
 {% highlight sh startinline=true %}
-gitlab project_create PROJECT_NAME "{namespace_id: 'ID'}"
+gitlab create_project PROJECT_NAME "{namespace_id: 'ID'}"
 {%endhighlight %}
 </li>
 

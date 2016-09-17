@@ -6,9 +6,9 @@ permalink: /about/
 
 Welcome to my blog! My name is Michael Lihs and I live in Stuttgart, Germany. The topics on this blog originate from some of my professional and leisure activities.
 
-At my current job as a web service developer at Bosch I mainly do
+At my current job as a backend developer for connected vehicles at [Bosch] I mainly do
 
-* [Spring-Boot] and development with Java
+* [Spring-Boot] development with Java
 * Continuous Integration and Continuous Delivery with [Jenkins]
 * Cloud Computing with [Cloud Foundry] and [BOSH]
 * DevOps stuff with [Docker], [Vagrant], [Chef] and [Berkshelf]
@@ -35,3 +35,4 @@ If you have any questions, feel free to contact me any time.
 [Cloud Foundry]:		https://www.cloudfoundry.org/
 [BOSH]:					https://bosh.io/
 [Docker]:				https://www.docker.com/
+[Bosch]:				https://www.bosch.com

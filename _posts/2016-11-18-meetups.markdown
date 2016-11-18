@@ -1,0 +1,169 @@
+---
+layout: post
+title:  "How organize a successful Meetup"
+summary: "Some tips and tricks to start your Meetup and make it more attractive"
+date:   2016-11-18 13:30:00
+categories: collaboration
+tags: [meetup, community]
+---
+
+This blog post summarizes an open space that we had at the DevOps Days Berlin 2016 concerning the organization of meetups. Thoughts are partly results of the discussion, partly my own.
+
+
+### Meetup Audience
+
+* From students to CEOs
+
+* Different skill levels
+
+* Generally speaking: people with an interest in networking and discussion
+
+
+### Announcement and Promotion
+
+* Most organziers use [meetup.com](https://www.meetup.com) to organize their meetups.
+
+* Meetup can be promoted on Twitter, Xing, LinkedIn...
+
+* 3 to 6 meetups a year seem to be a good schedule
+
+* Try to create a regular schedule
+
+
+### Sponsoring a Meetup
+
+* **Venue** Make sure to have a big enough room and if you show slides to have a good projector and everybody can see the slides
+
+* **Food and Drinks** organize something to eat and drink - even if it's only snacks. People will more likely sit together and keep the discussion going if they have a something to drink
+
+* **Speaker** it is not easy to find good speakers. Maybe you have the chance to let a company sponsor a speaker who is an expert in a topic you want to cover. Be careful though that your meetup doesn't become an advertisement event
+
+
+### Opening up a Meetup
+
+* Introduce yourself as the organizer and start the meetup intentionally. Make sure everybody is paying attention when your speaker starts
+
+* If the group is not too big: let people introduce themselves
+
+* Give sponsors a short introduction slot, but make sure they are not hijacking your event!
+
+* If it is your first event, set the stage by explaining what the topic is about and ask for feedback about what the attendees expect
+
+
+### Make a good presentation
+
+* Keep it rather short than too long - 45 to 60 minutes should be okay. Remember: people also want to discuss and socialize
+
+* Provide them stuff for discussion - maybe note some questions that you ask later on to keep the discussion flowing
+
+* Get in contact with good speakers at conferences and invite them to your meetup
+
+* Ask speakers of conferences to join your meetup before / after conferences (when they are still around)
+
+
+### A good Meetup...
+
+* ...is accessible for everybody who's interested in the topic
+
+* ...enables attendees to learn from each other
+
+* ...enables an open discussion around a presented topic
+
+* ...provides a plaform for networking: exchange with other people that have the same job / work in the same region / have the same interest
+
+* ...makes attendees sit together and drink a beer
+
+
+### After the Meetup
+
+* Gather feedback (e.g. you can use a scale from 1 = perfect to 5 = not good) and let people vote before they leave. Ask your attendees: 1) what do you want to talk about 2) what do you want to hear about?
+
+* Decide about a date and a topic for follow-up sessions
+
+* Use rating on meetup.com to see how people liked your meetup
+
+* Motivate people to leave a comment on what was good / bad / should be different
+
+* Share the slides of presentations
+
+* Maybe write a short blog post with a summary and share it on meetup.com / Twitter...
+
+* If you don't use a platform like Meetup.com, don't forget to collect the email addresses of the attendees to advertise your next session
+
+
+### Variations
+
+* Have multiple "ignite" talks instead of one long presentation
+
+* Open Spaces
+
+* Hands-on workshops
+
+* Sitting together in a bar
+
+
+### Best-Practices
+
+* Share workload among multiple organizers. No guarantee but chances are that you'll achieve higher continuity and that your meetups have more diverse topics and don't always take place at the same location.
+
+* Don't let the sponsors hold the presentation
+
+* Ask for room sponsors among Co-Working Spaces - they often provide rooms after normal working hours and are happy to make some extra money with selling drinks and food
+
+* Meetups are a good playground to learn how to make good presentations. Motivate your attendees to make their own presentations and provide them a stage
+
+* As an organizer, do not push content and sessions, rather provide a platform - chances are that you will get more diverse topics
+
+* Once your meetup becomes to big, think about specialization (e.g. from a general "DevOps" meetup to topics like "Cloud Computing", "AWS", "Continuous Integration"...)
+
+* You don't always have to start from scratch - often meetup groups already exist but there are no current events... just "hijack" one and reanimate it
+
+* Attend other meetups and learn from them - what are they doing differently, what can you adopt?
+
+
+### Some Examples
+
+#### [DevOps Meetup Frankfurt](https://www.meetup.com/de-DE/DevOps-Frankfurt/)
+
+* Started in 2012
+
+* The first meetup I attended
+
+* Various topics from tools to general discussions
+
+* Driven mainly by a single company but good diversity in speakers
+
+* 30 - 50 attendees per event.  Meetup group has 460 members
+
+* Regional speakers as well as speakers from companies (who sometimes used it as an advertisement platform)
+
+
+#### [DevOps Meetup Karlsruhe](https://www.meetup.com/de-DE/devops-karlsruhe/)
+
+* Started in 2014 with about 12 attendees
+
+* Topics are mainly centered around tools we also had hands-on sessions.
+
+* 3 companies are now engaged in organizing the meetup
+
+* Complementary Twitter account for anouncements.
+
+* 20 - 40 attendees per event. Meetup group has 478 members.
+
+
+#### [DevOps Meetup Stuttgart](https://www.meetup.com/de-DE/devops-stuttgart/)
+
+* Started in 2014
+
+* Topics are mainly tools but we also had Drinkups
+
+* Only few attendees at the first 2 events. More attendees since we meet regularly
+
+* 20 - 25 attendees. Meetup group has 300 members
+
+
+### Further Resources
+
+* [Start a new Meetup at meetup.com](https://secure.meetup.com/de-DE/create/)
+
+* [Great Blog Post on running your own Meetup](http://inside.envato.com/guide-to-meetups/)

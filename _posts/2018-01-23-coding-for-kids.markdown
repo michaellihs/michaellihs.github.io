@@ -21,11 +21,10 @@ The response to this tweet was overwhelming so I thought it's time to write a li
 * [LEGO MINDSTORMS](https://www.lego.com/en-us/mindstorms)
 
 
-## Kits
+## Hardware Kits
 
 * [bob3.org](http://www.bob3.org/en/) - *B·O·B·3 is a concept to learn programming.* B-O-B-3 is a concept to get young people involved with electronics, technology and programming.
 * [calliope-mini](https://calliope.cc/) - *Our mission is to give pupils from year 3 onwards a playful approach to the digital world.* Microcontroller with an easy-to-use graphical editor for "writing code".
-* 
 
 
 ## Software / Platforms
@@ -42,7 +41,7 @@ The response to this tweet was overwhelming so I thought it's time to write a li
 
 ## Initiatives
 
-* [@Devoxx4KidsDE](http://www.devoxx4kids.de/) - *teach children to coding, robotics and electronics with fun*. Workshops and presentations are freely available on [GitHub](https://github.com/devoxx4kids).
+* [Devoxx4KidsDE](http://www.devoxx4kids.de/) - *teach children to coding, robotics and electronics with fun*. Workshops and presentations are freely available on [GitHub](https://github.com/devoxx4kids).
 * [code.org](https://code.org/) - *is a non-profit dedicated to expanding access to computer science and increasing participation by women and underrepresented minorities.* Provides [courses for children starting at the age of 4](https://code.org/student/elementary).
 * [codecombat.com](https://codecombat.com/) - *A classroom in-a-box for teaching computer science.* CodeCombat is a platform for students to learn computer science while playing through a real game. Our courses have been specifically playtested to excel in the classroom, even for teachers with little to no prior programming experience.
 * [scratch](https://scratch.mit.edu/) - *Create stories, games, and animations. Share with others around the world.* Scratch is a project of the Lifelong Kindergarten Group at the MIT Media Lab. It is provided free of charge.

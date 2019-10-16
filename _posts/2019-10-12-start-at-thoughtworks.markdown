@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "My First Week at as a ThoughtWorker"
+title:  "My First Week as a ThoughtWorker"
 summary: "Summary of my first week at ThoughtWorks"
 date:   2019-10-12 20:00:00
 categories: work

@@ -49,3 +49,9 @@ This is a list of Github Gists that I use to remember noteworthy stuff... feel f
 * [Some Snippets and Resources for BOSH](https://api.github.com/gists/7afdd9a8088e893b84be3046bafb8807)
 * [Opens a Gitlab site for the current directory](https://api.github.com/gists/7afdd9a8088e893b84be3046bafb8807)
 * [Write your own ssh Server with the Python Twisted library](https://api.github.com/gists/7afdd9a8088e893b84be3046bafb8807)
+
+> Note to myself: here is the command that gives me all my gists as JSON
+> 
+> ```bash
+> curl 'https://api.github.com/users/michaellihs/gists?per_page=100' | jq '[ .[] | {url: .url, description: .description}]'
+> ```

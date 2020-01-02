@@ -23,6 +23,8 @@ brew install socat
 Monitoring traffic with Unix socket
 -------------------------------------
 
+> assuming we have the Docker daemon listening on a Unix socket `/var/run/docker.sock`
+
 Open a first terminal and run
 
 ```bash
@@ -41,15 +43,17 @@ You will see all HTTP traffic between the Docker CLI and the daemon in the first
 Monitoring traffic using TCP socket
 -----------------------------------
 
-If you don't have the Docker daemon listening to a TCP socket, you can first "simulate" this via
-
-```bash
-docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
-    -p 127.0.0.1:1234:1234 \
-    bobrik/socat TCP-LISTEN:1234,fork UNIX-CONNECT:/var/run/docker.sock
-```
-
-this will make the Docker daemon listen on `127.0.0.1:1234`
+> assuming we have the Docker daemon listening on a TCP socket `127.0.0.1:1234`
+>
+> if you don't have the Docker daemon listening to a TCP socket, you can first "simulate" this via
+>
+> ```bash
+> docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
+>     -p 127.0.0.1:1234:1234 \
+>     bobrik/socat TCP-LISTEN:1234,fork UNIX-CONNECT:/var/run/docker.sock
+> ```
+>
+> this will make the Docker daemon listen on `127.0.0.1:1234`
 
 Open a first terminal and run
 

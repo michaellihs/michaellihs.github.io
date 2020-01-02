@@ -7,7 +7,8 @@ categories: docker
 tags: [docker, linux]
 ---
 
-Recently, I learned how to use [socat](https://linux.die.net/man/1/socat) to monitor the network traffic between the Docker CLI and the Docker host.
+Recently, I learned how to use [socat](https://linux.die.net/man/1/socat) to monitor the network traffic between the Docker CLI and the Docker host. This works by proxying the communication via socat and sending all traffic to stdout. Here is how it works for either Unix sockets or TCP sockets.
+
 
 Installing `socat` on Mac
 -------------------------
@@ -18,10 +19,11 @@ If you are running on a Mac, you first need to install `socat` - easiest done vi
 brew install socat
 ```
 
+
 Monitoring traffic with Unix socket
 -------------------------------------
 
-In a first terminal, run
+Open a first terminal and run
 
 ```bash
 socat -v UNIX-LISTEN:/tmp/docker.sock,fork UNIX-CONNECT:/var/run/docker.sock
@@ -33,13 +35,13 @@ now open a second terminal and run
 docker -H unix:///tmp/docker.sock ps -a
 ```
 
-this will output all HTTP requests between the Docker CLI and the daemon in the first terminal.
+You will see all HTTP traffic between the Docker CLI and the daemon in the first terminal.
 
 
 Monitoring traffic using TCP socket
 -----------------------------------
 
-If you don't have the Docker daemon listening to a TCP socket, you can first make this happen via
+If you don't have the Docker daemon listening to a TCP socket, you can first "simulate" this via
 
 ```bash
 docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
@@ -49,17 +51,19 @@ docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
 
 this will make the Docker daemon listen on `127.0.0.1:1234`
 
-In a first terminal, run
+Open a first terminal and run
 
 ```bash
 socat -d -d -v TCP-LISTEN:2345 TCP4:127.0.0.1:1234
 ```
 
-in a second terminal, run
+now open a second terminal and run
 
 ```bash
 docker -H 127.0.0.1:2345 ps -a
 ```
+
+Again, you will see all traffic between the Docker CLI and the Docker daemon in the first terminal.
 
 
 

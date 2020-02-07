@@ -9,6 +9,8 @@ tags: [iterm, mac, shell]
 
 When working with multiple terminal windows, it is sometimes useful to have some kind of heading that indicates what each terminal contains. During our last showcase, we used this to let the audience know what each of our three terminal windows is showing.
 
+![iterm badges](/assets/images/iterm/iterm-badges.png)
+
 Here is a short tutorial on how to set this up, so that you can set the badge easily from the command line. We assume that you are using [iTerm](https://iterm2.com/) on a Mac.
 
 1. Install the [iTerm shell integration](https://iterm2.com/documentation-shell-integration.html) - if you are using bash, here is all you need to run
@@ -45,6 +47,6 @@ Here is a short tutorial on how to set this up, so that you can set the badge ea
    export badge='hello badge'
    ```
 
-   ![iTerm profile settings for the badge](/assets/images/iterm/iterm-badge.png)
+   ![set badge in terminal](/assets/images/iterm/iterm-badge.png)
 
 Have fun!

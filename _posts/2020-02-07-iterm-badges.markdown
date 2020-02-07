@@ -50,3 +50,7 @@ Here is a short tutorial on how to set this up, so that you can set the badge ea
    ![set badge in terminal](/assets/images/iterm/iterm-badge.png)
 
 Have fun!
+
+## Further References
+
+* https://technology.customink.com/blog/2016/07/18/how-to-add-badges-to-iterm2/

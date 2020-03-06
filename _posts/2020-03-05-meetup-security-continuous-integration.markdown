@@ -6,8 +6,6 @@ tags: [meetup, devops, continuous integration, security]
 categories: continuous integration
 ---
 
-# Meetup: Automated Security Testing in Continuous Integration
-
 This is a short summary of our [DevOps Stuttgart Meetup from March 5th](https://www.meetup.com/de-DE/devops-stuttgart/events/268094799/) about automated security testing in Continuous Integration. For the meetup we had [Christian Kühn](https://twitter.com/CYxChris) and [Arnold Franke](https://twitter.com/indyarni) from [Synyx](https://synyx.de/) with us as speakers.
 
 Chris started the presentation with a question who is currently running security tests in their pipelines and I was surprised by the majority of hands being raised. Also it seems like nowadays more then half of the audience is running production workloads in containers.

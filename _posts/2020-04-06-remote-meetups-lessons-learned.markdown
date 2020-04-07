@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Lessons learned from 2 Remote Meetups"
-date:   2020-03-19 21:55:29
+date:   2020-04-06 21:55:29
 tags: [meetup, devops, remote]
 categories: meetup
 ---
@@ -39,13 +39,15 @@ During the last 3 weeks, we had 2 remote meetups from our [DevOps Stuttgart meet
   * write them down on a document and try to cluster / order them before asking the presenter
   * use questions every now and then to make the presentation more interactive
   * answer the people asking questions that you got their question and they'll have a chance to ask it later on
-  
+
 * if your meeting is hi-jacked, remove unwanted people from the call
 
-### Don't announce non-protected Zoom Links
+### Avoid Zoom Bombing
 
 * unless you want unpleasant interruptions during your presenation, don't publicly share your Zoom links
 * use passwords for your Zoom sessions and share them via meetup messages sent to your participants
+* as a host: start sharing your screen the moment you start the zoom call to avoid others share unwanted content
+* make at least one other participant a (co) host of the meeting, to enable others to handle "unwanted guests" and mute / unmute others
 
 ### Don't be afraid of virtual Discussions
 

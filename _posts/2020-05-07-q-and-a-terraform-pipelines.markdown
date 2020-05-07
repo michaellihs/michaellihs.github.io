@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Currated Q&As from 'Getting Started with Terraform Pipelines'"
+title:  "Curated Q&As from 'Getting Started with Terraform Pipelines'"
 date:   2020-05-07 21:55:29
 tags: [meetup, devops, terraform, pipelines, continuous integration, continuous delivery]
 categories: meetup

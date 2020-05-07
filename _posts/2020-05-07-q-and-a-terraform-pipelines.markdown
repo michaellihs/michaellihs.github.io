@@ -6,7 +6,9 @@ tags: [meetup, devops, terraform, pipelines, continuous integration, continuous 
 categories: meetup
 ---
 
-Today, I had the pleasure of being the speaker for my very first ThoughtWorks meetup. The topic was "[Getting started with Terraform Pipelines](https://www.meetup.com/de-DE/devops-stuttgart/events/270362303/)" and due to the current (Corona) situation it was an online-only event. This post is a (curated) summary of the questions and answers that were written in the chat, since I think they contain a lot of things to be learned about Terraform and infrastructure as code.
+Today, I had the pleasure of being the speaker for my very first ThoughtWorks meetup. The topic was "[Getting started with Terraform Pipelines](https://www.meetup.com/de-DE/devops-stuttgart/events/270362303/)" and due to the current (Corona) situation it was an online-only event. You can find the slides here: [https://github.com/michaellihs/meetup-2020-05-07-terraform-pipelines/blob/master/presentation.pdf](https://github.com/michaellihs/meetup-2020-05-07-terraform-pipelines/blob/master/presentation.pdf)
+
+This post is a (curated) summary of the questions and answers that were written in the chat, since I think they contain a lot of things to be learned about Terraform and infrastructure as code.
 
 **Will you be doomed if state gets somehow lost? Can you recover from a state loss?**
 * you should store your state in a high durability place, such as S3
@@ -172,6 +174,7 @@ Today, I had the pleasure of being the speaker for my very first ThoughtWorks me
 
 **do you run azure rm templates from teraform/terragrunt?**
 * sorry, I have no ideas what this is
+* so there is a way to provision resources via powershell modules/integration with UI via Azure resource templates (similar to cloudformation on AWS), when you develope infrastrcuture with teraform you are not always have chnages from Azure in modules
 
 **How do you know which version or git commit of the terraform scripts was used to build the current prod?**
 * We tag things with the pipeline ID which is made up of the git short hash + pipeline run count
@@ -186,108 +189,13 @@ Today, I had the pleasure of being the speaker for my very first ThoughtWorks me
 * Basically applying a new resource against a new (wrong) terraform state.
 
 **How are you guys managing state migrations? For example, I want to rename a module? I want to rename a module `module.x.something` to `module.y.something`. We’ve always had to do this “by hand” before our pipeline runs with terraform state mv. Any hints on how to get this in a pipeline in a "migrations”**
-* [tf state mv]() works well
+* [tf state mv](https://www.terraform.io/docs/commands/state/mv.html) works well
+* terraform state mv works fine, but its always outside of our pipeline. We are adding it to our PRs right now to say “Hey, before we merge this PR into environment, do these state moves”
 
+**But how to "terraform state.." when you don't have access to the state / infra, because only your CI has**
+* i did it manually, not in ci
+* that then, of course, breaks the concept of only CI has access
+* use a temporary one-off pipeline to do such renaming
 
-20:16:12	 From Steffen Gebert : great question!
-20:16:17	 From Sean Mitchell : Gah … enter too early :D
-20:17:06	 From Hannes B : Caused, not cost
-
-
-20:17:22	 From Anja Kammer : Personday, not Manday ;)
-20:17:28	 From Michael Fait : Yeah sure … corrupted state ...
-20:17:32	 From Michael Fait : :)
-20:17:42	 From Hannes B : Thanks
-
-
-20:17:49	 From Yevgen Batovskyi : so there is a way to provision resources via powershell modules/integration with UI via Azure resource templates (similar to cloudformation on AWS), when you develope infrastrcuture with teraform you are not always have chnages from Azure in modules
-
-
-20:18:04	 From Hannes B : Do you have an opinion on terra grunt?
-
-
-20:18:05	 From Benedikt Klein to Michael Lihs (Privately) : Hi Michael, wollte dich gerade nicht aus deinem Redefluss/Gedanken bringen. Stehe ich gerade auf dem Schlauch? Kennen wir uns wirklich? Oder kennst du nur einen anderen Benedikt Klein? Wohne in Köln. :)
-
-
-20:18:10	 From Engie Tawfik (ThoughtWorks) : @Sean Mitchell, grep and sed possibly? :D
-
-
-20:18:14	 From Yevgen Batovskyi : and I was interested how do you integrate azure rm?
-
-
-20:18:24	 From Ashish Mohite : I've done a complete nested module renames
-
-
-20:18:40	 From Matthew Cosgrove : For “proper” unit testing with all dependencies in memory, it’s looking compelling on prem by combining Terraform with the golang vCenter vcsim tool where you can replicate a vCenter set of resources locally. Is anyone aware of such simulation tools for any of the public clouds?
-20:18:46	 From Sean Mitchell : Grep and sed … no :D terraform state mv works fine, but its always outside of our pipeline. We are adding it to our PRs right now to say “Hey, before we merge this PR into environment, do these state moves”
-
-
-20:19:01	 From Steffen Gebert : But how to "terraform state.." when you don't have access to the state / infra, because only your CI has @Ashish
-
-
-20:19:22	 From Sean Mitchell : It also happened recently when azurerm renamed some resources from like azurerm_hub_dps to azurerm_iothub_dps … terraform wanted to erase and recreate
-20:19:36	 From Ashish Mohite : i did it manually
-20:19:42	 From Ashish Mohite : not in ci
-20:20:01	 From Steffen Gebert : that then, of course, breaks the concept of only CI has access
-
-
-20:20:28	 From Hannes B : 🙏
-20:20:35	 From Ashish Mohite : yeah
-
-
-20:20:36	 From Tigran Arabadjyan : what about rollbacks with terraform?
-
-
-20:20:36	 From Stephie (ThoughtWorks) : Get Michaels slides here: https://github.com/michaellihs/meetup-2020-05-07-terraform-pipelines/blob/master/presentation.pdf
-
-
-20:20:40	 From Steffen Gebert : but I don't see a good alternative, except that you have a pipeline which allows to do such renaming
-
-
-20:20:56	 From Sascha Diefenthäler : Big appreciation for the talk!
-20:20:56	 From Michael Fait : 👍👍👍
-20:20:57	 From Alberto Enriquez de Salamanca : Thanks, very good structured
-20:20:58	 From Christina : thank you very much
-20:21:01	 From Krystian : Thank you
-20:21:01	 From Sean Mitchell : Thanks!!! :)
-20:21:05	 From Mathilda : Thanks
-20:21:07	 From Ashish Mohite : thanks 😊
-20:21:08	 From Dominic : Awesome!
-20:21:11	 From Steffen Gebert : Thanks!
-20:21:11	 From  Sebastian : Thanks!
-20:21:12	 From Benedikt Klein to Michael Lihs (Privately) : Aber fand deine keynote trotzdem sehr gut! :)
-vllt sollten wir uns auf Xing/linkedin vernetzen, dann hast du zwei Benedikt Kleins in deiner Liste! ;)
-20:21:12	 From Taner Durkut : Thank you so much :)
-20:21:13	 From Jan Krajewski : many thanks
-20:21:13	 From Felix : Thanks :)
-20:21:15	 From Jan Krajewski : bye
-20:21:15	 From Jette Bakemeier : Thank you!
-20:21:18	 From Laura : thank u :)
-20:21:19	 From Franck Brignoli : Great talk! thanks
-20:21:20	 From Ronny : thanks
-20:21:20	 From Engie Tawfik (ThoughtWorks) : Thanks :)
-20:21:22	 From Thomas Feucht : thank you!
-20:21:23	 From Matthias : thx
-20:21:23	 From Tim Fletcher : I would do the rename via a temp pipeline
-20:21:23	 From Achim : Thank you!
-20:21:25	 From Till : Thanks.
-20:21:26	 From jeroen : Thank you
-20:21:26	 From Yevgen Batovskyi : awesome!! thank a lot TW
-20:21:27	 From Jonathan Nowak : Thanks :-)
-20:21:28	 From Mo El Sherif : Thanks for a great talk
-20:21:33	 From Jenna (ThoughtWorks) : Thanks for joining everyone! :)
-20:21:44	 From Michi : Thank you guys!
-20:21:48	 From Rafael Rezende : Thank you very much!! I really enjoyed the presentation!
-20:21:48	 From Daniel @d_pisanu : cheerio!
-20:21:48	 From Jerko Horvat : Thank you!
-20:21:54	 From Till : Have to go grab some Pizza now :)
-20:22:00	 From Andreas Härpfer : And also thanks to Tim for answering questions in the chat!
-20:22:05	 From Anna Sukiasyan : 3 dots -> save chat
-20:22:07	 From Rafael Rezende : Good question, because there are good questions and answers here :-)
-20:22:51	 From Dominic to Michael Lihs (Privately) : Danke auch nochmal für deinen Blogpost an Fred
-20:23:05	 From Michael Lihs to Dominic (Privately) : gern geschehen :) hoffe, es hilft
-20:23:25	 From Stefano Salvatori : Thank!!!! For the presentation !
-20:23:36	 From Dominic to Michael Lihs (Privately) : Oh, ja und wie. Bin sicher du bekommst es mir ;-)
-20:23:43	 From Dominic to Michael Lihs (Privately) : mit
-20:24:40	 From Marcus Spiering : thanks, have a nice evening
-
+**what about rollbacks with terraform?**
+* no answers provided

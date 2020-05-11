@@ -6,7 +6,7 @@ tags: [meetup, devops, terraform, pipelines, continuous integration, continuous 
 categories: meetup
 ---
 
-Today, I had the pleasure of being the speaker for my very first ThoughtWorks meetup. The topic was "[Getting started with Terraform Pipelines](https://www.meetup.com/de-DE/devops-stuttgart/events/270362303/)" and due to the current (Corona) situation it was an online-only event. You can find the slides here: [https://github.com/michaellihs/meetup-2020-05-07-terraform-pipelines/blob/master/presentation.pdf](https://github.com/michaellihs/meetup-2020-05-07-terraform-pipelines/blob/master/presentation.pdf)
+Today, I had the pleasure of being the speaker for my very first ThoughtWorks meetup. The topic was "[Getting started with Terraform Pipelines](https://www.meetup.com/de-DE/devops-stuttgart/events/270362303/)" and due to the current (Corona) situation it was an online-only event. You can find the slides here: [https://github.com/michaellihs/meetup-2020-05-07-terraform-pipelines/blob/master/presentation.pdf](https://github.com/michaellihs/meetup-2020-05-07-terraform-pipelines/blob/master/presentation.pdf). You can find a recording of the meetup in [this link](https://thoughtworks.zoom.us/rec/play/uJJ-Ieiurjs3Et2R5QSDAKN5W421e6is03BKr_QLmBvmUHAKNAWgb7sUNOVa83V6iBUB9uQGKTwrSlvD?startTime=1588871295000&_x_zm_rtaid=Pjc_wM21RLaU-gQTQT2URA.1589190706190.7f88aeedbc3076729df9999c66bc8301&_x_zm_rhtaid=581).
 
 This post is a (curated) summary of the questions and answers that were written in the chat, since I think they contain a lot of things to be learned about Terraform and infrastructure as code.
 

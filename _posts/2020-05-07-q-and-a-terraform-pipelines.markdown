@@ -12,22 +12,21 @@ This post is a (curated) summary of the questions and answers that were written 
 
 **Will you be doomed if state gets somehow lost? Can you recover from a state loss?**
 * you should store your state in a high durability place, such as S3
-* not exactly but close enough - [terraform import](https://www.terraform.io/docs/import/index.html) can help
-* Terraform gives the possibility to import existing ressources into a state
-* But there is no import all yet … it is per resource (at least last I checked)
+* you are not exactly doomed, but close enough - [terraform import](https://www.terraform.io/docs/import/index.html) can help
+  * Terraform gives the possibility to import existing ressources into a state
+* But there is no way to import all resources yet, it is per resource (at least last I checked)
 * not every resource can be imported
 * You should take care of import. If the provider is implemented badly it won't help you very much 
 * you can import existing infrastructure into a state
 * You should backup your state file aswell :-) maybe work with snapshots before/after apply 
-* the state in the end is a JSON File. If everything else fails, things can fixed by editing the file and reuploading it, although this is a recipe for pain
-
+* the [state in the end is a JSON File](https://thorsten-hans.com/terraform-state-demystified). If everything else fails, things can fixed by editing the file and reuploading it, although this is a recipe for pain
 
 **Does terraform give a graphical representation of the infra getting created like for e.g cloud formation designer provides?**
-* State described well here. Also the graph tool https://thorsten-hans.com/terraform-state-demystified
+* This [blog post](https://thorsten-hans.com/terraform-state-demystified) contains a tool that generates a graph from your Terraform infrastructure
 
 **What happens if resorces were changed outside terraform?**
 * Terraform will change them back to what is described in the configuration
-* Sometimes this means destroying and re-creating a resource
+  * Sometimes this means destroying and re-creating a resource
 
 **Followup question: What if your state loss happens because a state apply failed and you have an intermediate state? When a state apply fails because AWS rejects the request?**
 * terraform usually stores backup file while apply
@@ -53,14 +52,13 @@ This post is a (curated) summary of the questions and answers that were written 
 **Which systems (providers) are supported by Terraform**
 * These are the supported systems that Terraform can configure: https://www.terraform.io/docs/providers/index.html
 
-
 **tdd is kinda impossible with terraform**
-* terratest is ok to use, but doesn't help much in tdd
+* [terratest](https://terratest.gruntwork.io/) is ok to use, but doesn't help much in tdd
 * It depends on how you consider TDD, my team have written tests and then written the terraform to deploy working code to make the tests go green - this is out of scope of this talk but we have run talks on infra testing before and will again
 
 **Terraform vs. Pulumi - which is gaining more traction these days?**
 * terraform has a bigger offering of providers, pulumi is in very active development as well
-* pulumi is gaining traction
+* [pulumi](https://www.pulumi.com/) is gaining traction
 * if you are starting from scratch I would encourage to check both and see which one fits your use case better
 * My team have focused on Terraform as it’s a common language and tool set to work with Github, K8S and AWS
 
@@ -71,7 +69,8 @@ This post is a (curated) summary of the questions and answers that were written 
 
 **What does it mean to split state? Is this an outcome of infra modularity?**
 * splitting state means that you have different state files for different parts of your infrastructure
-* e.g. this can mean that you have a different state for each environment or even for each service's infrastructure
+  * e.g. this can mean that you have a different state file for each environment (DEV, TEST, PROD) or even for each service's infrastructure
+  * messing up state in a DEV environment does not effect PROD
 
 **should we split state for each environment?**
 * YES

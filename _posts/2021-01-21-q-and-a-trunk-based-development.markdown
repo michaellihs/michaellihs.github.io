@@ -8,7 +8,7 @@ categories: meetup
 
 Last week, I had the pleasure to speak about *Trunk-Based Development* together with ThoughtWorks' [Chris Ford](https://twitter.com/ctford) and [Kief Morris](https://twitter.com/kief). This blog post contains a curated list of questions and answers from the discussions we had during the meetup.
 
-For those of you who missed the talk, here are [the slides from the presentation](https://github.com/michaellihs/presentations/blob/master/trunk-based-development/2021-01-21-meetup-trunk-based-development.pdf). The recording on the talk is currently in review, I will link it as soon as it's available.
+For those of you who missed the talk, here are [the slides from the presentation](https://github.com/michaellihs/presentations/blob/master/trunk-based-development/2021-01-21-meetup-trunk-based-development.pdf). The recording of the talk is currently in review, I will link it as soon as it's available.
 
 ### But we do trunk-based development with pull requests
 
@@ -139,20 +139,20 @@ Some of the answers:
 * generally you have to plan ahead for non-breaking changes, e.g. provide old features in parallel and phase them out after new features have been successfully introduced
 * The mind change for DB-developer is huge. As the goal for a for DB-developer was to have only a clean DB structure in Production. And the solution is here to  provide this intermediate DB-structure in Production.
 
-### Kent Beck’s “test && commit || revert”, or: Limbo?
+### Kent Beck’s "test && commit || revert"
 
-> Another, maybe somewhat related, more extreme workflow - have you heard about [Kent Beck’s "test && commit || revert", or: Limbo?](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
+> Another, maybe somewhat related, more extreme workflow - have you heard about [Kent Beck’s "test && commit || revert"](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
 > If yes, do you have any thoughts about it?
+
+* I personally didn't know it, but thought, I'd link it here.
 
 ### Team situations around trunk-based development
 
 > How would you handle the situation when you have head of dev who draws part of his identity from being a hard and pain in the a** reviewer and therefore hates TBD? Any idea of opening up someone like that to the idea?
 
 * if someone draws their identity from being a pain ita, it might be really hard
-19:03:12 From Milosz Danczak (he/him) to Everyone : @Yvonne run
-19:03:54 From Kief (he/him) [London] to Everyone : Trust is important. If your lead doesn’t trust the team that’s an issue :-/
-19:03:57 From Thomas Limp to Everyone : :+1:
-19:04:03 From Michael Lihs to Everyone : +1
+* someone recommended to better run
+* Trust is important. If your lead doesn’t trust the team that’s an issue :-/
 
 ## Pair programming and trunk-based development
 

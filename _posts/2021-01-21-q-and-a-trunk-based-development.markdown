@@ -8,6 +8,8 @@ categories: meetup
 
 Last week, I had the pleasure to speak about *Trunk-Based Development* together with ThoughtWorks' [Chris Ford](https://twitter.com/ctford) and [Kief Morris](https://twitter.com/kief). This blog post contains a curated list of questions and answers from the discussions we had during the meetup.
 
+For those of you who missed the talk, here are [the slides from the presentation](https://github.com/michaellihs/presentations/blob/master/trunk-based-development/2021-01-21-meetup-trunk-based-development.pdf). The recording on the talk is currently in review, I will link it as soon as it's available.
+
 ### But we do trunk-based development with pull requests
 
 *There was some irritation around "my definition" of trunk-based development*

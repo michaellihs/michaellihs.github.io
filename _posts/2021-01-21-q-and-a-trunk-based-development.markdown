@@ -178,5 +178,5 @@ Some of the answers:
 * [Trunk-based Development Website](https://trunkbaseddevelopment.com/)
 * [Kief's Blog Post on Pull Requests](https://infrastructure-as-code.com/book/2021/01/02/pull-requests.html)
 * [Martin Fowler on Dark Launching](https://martinfowler.com/bliki/DarkLaunching.html)
-* [Kent Beck’s "test && commit || revert"](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
+* [Kent Beck’s "test &amp;&amp; commit &vert;&vert; revert"](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
 * [Book "Accelerate"](https://itrevolution.com/book/accelerate/)

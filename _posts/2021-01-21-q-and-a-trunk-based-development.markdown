@@ -174,8 +174,9 @@ Some of the answers:
 
 ## References and resources mentioned in the meetup
 
+* [Slides from the meetup presentation](https://github.com/michaellihs/presentations/blob/master/trunk-based-development/2021-01-21-meetup-trunk-based-development.pdf)
 * [Trunk-based Development Website](https://trunkbaseddevelopment.com/)
 * [Kief's Blog Post on Pull Requests](https://infrastructure-as-code.com/book/2021/01/02/pull-requests.html)
 * [Martin Fowler on Dark Launching](https://martinfowler.com/bliki/DarkLaunching.html)
-* [Kent Beck’s “test && commit || revert”, or: Limbo?](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
+* [Kent Beck's test && commit || revert](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
 * [Book "Accelerate"](https://itrevolution.com/book/accelerate/)

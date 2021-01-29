@@ -81,6 +81,7 @@ Some of the answers:
 > Feature toggle are good and valid solution. But also, here you can get into a similar hell like with the branch-hell! Not every time the features are completely independent, so you need test different combinations of the feature-toggle-states. Managing these could very complex☹.
 
 * As with anything, good design, good discipline is essential
+* For further details on how to avoid feature toggle hell, refer to this [blog post by my dear colleagues Paul and Steve](https://www.thoughtworks.com/insights/blog/managing-feature-toggles-teams)
 
 > I think my biggest issue with TBD is that it forces you to use feature-toggles. Using them leads to tech debt.
 

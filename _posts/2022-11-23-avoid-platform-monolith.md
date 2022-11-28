@@ -20,24 +20,27 @@ Some background
 * why invest? 
   * t2market, cost efficiency, reliabilit, security
 
-* reality check for dev platforms ("have you faced these challenges?")
-  * become bottlenecks
-  * low adoption
+* reality check for dev platforms 
+
+   > "have you faced one or more of these challenges?"
+  
+  * platform becomes a bottleneck
+  * low adoption rate amongst developers
   * insufficient performance
-  * new features take long time
+  * new features take long time to be implemented
   * costs are rising
 
-> online poll reveals: "some of them apply to 57% of the audience"
+> online poll reveals: "some of the points above applied to 57% of the audience"
 
 Why do platforms fail?
 ----------------------
 
-* treating cloud like on-prem DCs 
-  * delegated to team that previously maintained on prem DC
-  * ticket based
+* treating the cloud like on-prem DCs 
+  * delegated to a team that previously maintained the on-prem DC
+  * ticket-based
   * silos
   * no interaction with outer world
-  * no prod thinking
+  * no product thinking
   * "it takes more to enable autonomous teams and the business value you want to achieve"
 * not planning for right scale
   * scaling up AND scaling down (starting with tons of resources, not really required)
@@ -197,3 +200,13 @@ Takeaways
 ---------
 
 * monolithic platforms can restrict its own evolution and restric the customers
+
+References & resources
+----------------------
+
+* [Infrastructure as product - Max Griffiths](https://www.thoughtworks.com/content/dam/thoughtworks/documents/e-book/tw_ebook_infrastructure_as_product_max_griffiths_2021.pdf)
+* [Incremental developer platform on Thoughtworks Technology Radar](https://www.thoughtworks.com/en-de/radar/techniques/incremental-developer-platform)
+* [The art of platform thinking](https://www.thoughtworks.com/en-de/insights/blog/art-platform-thinking)
+* [The enterprise guide of platform thinking](https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_enterprise_guide_to_platform_thinking.pdf)
+* [Why you should invest in good Developer Experience today](https://www.thoughtworks.com/en-de/insights/blog/why-you-should-invest-good-developer-experience-today)
+* [Five proven approaches for a better Developer Experience in your organisation](https://www.thoughtworks.com/insights/blog/experience-design/approaches-for-a-better-developer-experience)

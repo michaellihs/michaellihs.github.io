@@ -6,7 +6,7 @@ tags: [meetup, devops, platform, developer experience]
 categories: meetup
 ---
 
-These are my notes from the [Thoughtworks meetup on Nov 23rd 2022](https://www.meetup.com/de-DE/ThoughtWorks-Muenchen/events/289371760/) with [Marion Bruns](https://www.linkedin.com/in/marion-bruns-673282/) and [Rahul Punjabi](https://www.linkedin.com/in/punjabirahul/) about platform monoliths and why you should avoid them.
+These are my notes from the [Thoughtworks meetup on Nov 23rd 2022 (link contains recording)]([https://www.meetup.com/de-DE/ThoughtWorks-Muenchen/events/289371760/](https://www.thoughtworks.com/about-us/events/avoid-platform-monoliths)) with [Marion Bruns](https://www.linkedin.com/in/marion-bruns-673282/) and [Rahul Punjabi](https://www.linkedin.com/in/punjabirahul/) about platform monoliths and why you should avoid them.
 
 Why you should avoid platform monoliths
 =======================================

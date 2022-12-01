@@ -6,7 +6,7 @@ tags: [meetup, automotive, kubernetes, rust]
 categories: meetup
 ---
 
-These are my notes from the first "Automotive Software Development Meetup" in Stuttgart last week.
+These are my notes from the first ["Automotive Software Development Meetup"](https://www.meetup.com/de-DE/automotive-software-development/events/289906269/) with [Christian Fraas](https://www.linkedin.com/in/christian-fraas/) and [Michael Fait](https://www.linkedin.com/in/michael-fait-b2247684/) in Stuttgart last week.
 
 Automotive meetup
 =================

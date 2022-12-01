@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Meetup: Why you should avoid platform monoliths"
-date:   2022-11-23 20:00:00
-tags: [meetup, devops, platform, developer experience]
+title:  "Meetup: Automotive Software Development"
+date:   2022-11-29 20:00:00
+tags: [meetup, automotive, kubernetes, rust]
 categories: meetup
 ---
 

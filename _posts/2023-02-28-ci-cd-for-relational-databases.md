@@ -6,7 +6,7 @@ tags: [meetup, ci/cd, databases]
 categories: meetup
 ---
 
-These are my notes from the [DevOps Stuttgart Meetup](https://www.meetup.com/de-DE/devops-stuttgart/): CI/CD for relational databases
+These are my notes from the [DevOps Stuttgart Meetup](https://www.meetup.com/de-DE/devops-stuttgart/): CI/CD for relational databases with [Jasmin Fluri](https://www.linkedin.com/in/jasminfluri/)
 
 The slides for this talk can be [found here](https://de.slideshare.net/JasminFluri/relational-database-cicd).
 
@@ -37,24 +37,13 @@ Problems:
 
 see [Database decay and how to avoid it](https://ieeexplore.ieee.org/document/7840584) (Stonebraker et al 2016 )
 
-## we don't avoid DB changes, but we have fixed release windows
-
-- features done, but need to wait, causes dependencies amongst features
-- risk of huge releases, many features at once
-- long feedback cycles, feedback only during release window
-- large deployments and late deployments lead to bigger risk
-
-## what we should do
-
-- deliver features, when they are ready
-
 ## What we know about releasing SW
 
 - [DORA report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out)
 - CI/CD profits from losely coupled architecture
 - without proper architecture, you don't benefit from CI/CD
 
-## 4 (5) key metric
+### 4 (5) key metrics
 
 - lead for changes (starts with implementing a feature, ends with feature in prod)
 - MTTR (time needed to fix a failure in production)
